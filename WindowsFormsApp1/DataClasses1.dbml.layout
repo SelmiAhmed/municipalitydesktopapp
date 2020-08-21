@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 10.75" name="DataClasses1">
+  <DataContextMoniker Name="/DataClasses1DataContext" />
+  <nestedChildShapes>
+    <classShape Id="bceefff5-fa1a-44fe-9a31-54dfb9476783" absoluteBounds="3.5, 1.625, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/DataClasses1DataContext/AdminCitoyen" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4fa30e33-d48b-4b34-80a0-a301822ef9a6" absoluteBounds="3.515, 2.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c123ce22-fd9c-463b-af65-4d85c82b8a43" absoluteBounds="0.75, 1.5, 2, 1.7708968098958329">
+      <DataClassMoniker Name="/DataClasses1DataContext/Administrateur" />
+      <nestedChildShapes>
+        <elementListCompartment Id="563cb112-41b0-494c-a139-13df09e14b89" absoluteBounds="0.765, 1.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7faa161e-be93-441e-b98d-742d6153c027" absoluteBounds="3.5, 4.5, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/DataClasses1DataContext/Certificat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c136c622-01ad-4e05-832f-1d5bfc49cc80" absoluteBounds="3.515, 4.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7139bc63-912b-4350-a3b3-1d80c6b856b5" absoluteBounds="3.5, 6.625, 2, 1.5785953776041675">
+      <DataClassMoniker Name="/DataClasses1DataContext/Adresse" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a7978aa3-57ea-41ac-a9af-00641596d47b" absoluteBounds="3.515, 7.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fd0df9c5-96c6-4085-85cb-ddba35fa8cc8" absoluteBounds="3.5, 8.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClasses1DataContext/Reclamation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="48679428-956e-45a9-be9b-6c73e8e7ba00" absoluteBounds="3.515, 9.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="030f9e15-28b2-4560-8d2d-9bc2a626f61b" absoluteBounds="0.75, 4, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/DataClasses1DataContext/Citoyen" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b057b5f6-8905-4a89-9628-b2e880b535c9" absoluteBounds="0.765, 4.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 2.31814697265625); (3.5 : 2.31814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClasses1DataContext/Administrateur/Administrateur_AdminCitoyen" />
+      <nodes>
+        <classShapeMoniker Id="c123ce22-fd9c-463b-af65-4d85c82b8a43" />
+        <classShapeMoniker Id="bceefff5-fa1a-44fe-9a31-54dfb9476783" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.00153746153846); (3.125 : 3.62653746153846); (3.125 : 2.69597245898438); (3.5 : 2.69597245898438)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClasses1DataContext/Citoyen/Citoyen_AdminCitoyen" />
+      <nodes>
+        <classShapeMoniker Id="030f9e15-28b2-4560-8d2d-9bc2a626f61b" />
+        <classShapeMoniker Id="bceefff5-fa1a-44fe-9a31-54dfb9476783" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.19314697265625); (3.5 : 5.19314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClasses1DataContext/Citoyen/Citoyen_Certificat" />
+      <nodes>
+        <classShapeMoniker Id="030f9e15-28b2-4560-8d2d-9bc2a626f61b" />
+        <classShapeMoniker Id="7faa161e-be93-441e-b98d-742d6153c027" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 6.5401025390625); (1.75 : 7.41429768880208); (3.5 : 7.41429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClasses1DataContext/Citoyen/Citoyen_Adresse" />
+      <nodes>
+        <classShapeMoniker Id="030f9e15-28b2-4560-8d2d-9bc2a626f61b" />
+        <classShapeMoniker Id="7139bc63-912b-4350-a3b3-1d80c6b856b5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.2812525 : 6.5401025390625); (2.2812525 : 9.66429768880208); (3.5 : 9.66429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClasses1DataContext/Citoyen/Citoyen_Reclamation" />
+      <nodes>
+        <classShapeMoniker Id="030f9e15-28b2-4560-8d2d-9bc2a626f61b" />
+        <classShapeMoniker Id="fd0df9c5-96c6-4085-85cb-ddba35fa8cc8" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="projet" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=desktop-olse3hj\sqlexpress;Initial Catalog=projet;Integrated Security=True;Pooling=False" SettingsObjectName="WindowsFormsApp1.Properties.Settings" SettingsPropertyName="projetConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.AdminCitoyen" Member="AdminCitoyen">
+    <Type Name="AdminCitoyen">
+      <Column Name="login_A" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="login_C" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Administrateur_AdminCitoyen" Member="Administrateur" ThisKey="login_A" OtherKey="login_A" Type="Administrateur" IsForeignKey="true" />
+      <Association Name="Citoyen_AdminCitoyen" Member="Citoyen" ThisKey="login_C" OtherKey="login_C" Type="Citoyen" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Administrateur" Member="Administrateur">
+    <Type Name="Administrateur">
+      <Column Name="login_A" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="password_A" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="nom" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="prenom" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="photo_A" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Administrateur_AdminCitoyen" Member="AdminCitoyen" ThisKey="login_A" OtherKey="login_A" Type="AdminCitoyen" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Certificat" Member="Certificat">
+    <Type Name="Certificat">
+      <Column Name="QR_Code" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="type" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="login_C" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Citoyen_Certificat" Member="Citoyen" ThisKey="login_C" OtherKey="login_C" Type="Citoyen" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Adresse" Member="Adresse">
+    <Type Name="Adresse">
+      <Column Name="numero" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="rue" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="zone" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="login_C" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Citoyen_Adresse" Member="Citoyen" ThisKey="login_C" OtherKey="login_C" Type="Citoyen" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Reclamation" Member="Reclamation">
+    <Type Name="Reclamation">
+      <Column Name="code_R" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="details" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[pieces jointes]" Member="pieces_jointes" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="login_C" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Citoyen_Reclamation" Member="Citoyen" ThisKey="login_C" OtherKey="login_C" Type="Citoyen" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Citoyen" Member="Citoyen">
+    <Type Name="Citoyen">
+      <Column Name="login_C" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="password_C" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="code" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nom" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="prenom" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[date de naissance]" Member="date_de_naissance" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[adresse email]" Member="adresse_email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="photo_C" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="fonction" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Citoyen_AdminCitoyen" Member="AdminCitoyen" ThisKey="login_C" OtherKey="login_C" Type="AdminCitoyen" />
+      <Association Name="Citoyen_Certificat" Member="Certificat" ThisKey="login_C" OtherKey="login_C" Type="Certificat" />
+      <Association Name="Citoyen_Adresse" Member="Adresse" ThisKey="login_C" OtherKey="login_C" Type="Adresse" />
+      <Association Name="Citoyen_Reclamation" Member="Reclamation" ThisKey="login_C" OtherKey="login_C" Type="Reclamation" />
+    </Type>
+  </Table>
+</Database>
